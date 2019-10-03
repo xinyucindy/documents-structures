@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 20190919 exo1 Modélisez votre livre (préféré ?) en vous servant de ce que nous venons de voir.-->
+<livre>
+    <source site="gallica" lien="source : https://gallica.bnf.fr/ark:/12148/bpt6k5680148t?rk=21459;2#"/>    
+    <titre>L'île à hélice</titre>
+    <infos_auteurs>
+        <auteur_principal>
+            <nom>Verne</nom>
+            <prenom>Jules</prenom>
+            <annee>1828-1905</annee>
+        </auteur_principal>
+        <contributeur>
+            <nom>Léon</nom>
+            <prenom>Benett</prenom>
+            <annee>1839-1916</annee>
+        </contributeur>    
+    </infos_auteurs>    
+    <edition>
+        <editeur>Collection Hetzel</editeur>
+        <lieu>Paris</lieu>
+        <date>1906</date>        
+    </edition>
+    <infos_livre>
+        <langue>français</langue>
+        <nb_pages>484</nb_pages>
+        <descriptions>
+            <description n="1">Collection : Les Voyages extraordinaires</description>
+            <description n="2">Collection numérique : Littérature de jeunesse</description>
+            <description n="3">Contient une table des matières</description>
+            <description n="4">Avec mode texte</description>
+        </descriptions>
+    </infos_livre>   
+</livre>
