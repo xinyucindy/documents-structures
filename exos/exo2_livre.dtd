@@ -1,0 +1,21 @@
+<?xml encoding="UTF-8"?>
+<!ELEMENT livres (livre+)>
+<!ATTLIST livre n CDATA #REQUIRED>
+<!ELEMENT livre (titre, infos_auteurs, edition, infos_livre)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT infos_auteurs (auteur_principal+, contributeur+)>
+<!ELEMENT auteur_principal (nom, prenom, annee)>
+<!ELEMENT contributeur (nom, prenom, annee)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT annee (#PCDATA)>
+<!ELEMENT edition (editeur, lieu, date)>
+<!ELEMENT editeur (#PCDATA)>
+<!ELEMENT lieu (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT infos_livre (langue, nb_pages, descriptions)>
+<!ELEMENT langue (#PCDATA)>
+<!ELEMENT nb_pages (#PCDATA)>
+<!ELEMENT descriptions (description+)>
+<!ATTLIST description n CDATA #REQUIRED>
+<!ELEMENT description (#PCDATA)>

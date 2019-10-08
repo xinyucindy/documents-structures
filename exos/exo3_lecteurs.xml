@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DTD, interne -->
+<!DOCTYPE lecteurs [
+<!ENTITY type "mp3">
+<!ENTITY apple "Apple">
+<!ELEMENT lecteurs (lecteur+)>
+<!ATTLIST lecteur id CDATA #REQUIRED>
+<!ELEMENT lecteur (type, produit, marque, prix)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT produit (#PCDATA)>
+<!ELEMENT marque (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+]>
+<lecteurs>
+	<lecteur id="1">
+		<type>&type;</type>
+		<produit>Lecteur Audio Sony Walkman NWA100TPS High-Resolution</produit>
+		<marque>Sony</marque>
+		<prix>418 €</prix>
+	</lecteur>
+	
+	<lecteur id="2">
+		<type>&type;</type>
+		<produit>Lecteur MP3 Bluetooth 4.1 Musique de sport 16Go avec Clip,Arbily Ecran Tactile</produit>
+		<marque>Bluetooth</marque>
+		<prix>37 €</prix>
+	</lecteur>
+	
+	<lecteur id="3">
+		<type>&type;</type>
+		<produit>Apple iPod Touch 32 Go Or</produit>
+		<marque>&apple;</marque>
+		<prix>250 €</prix>
+	</lecteur>
+	
+	<lecteur id="4">
+		<type>&type;</type>
+		<produit>Lecteur MP3 -shuffle- MÉMOIRE MICRO SD</produit>
+		<marque>shuffle</marque>
+		<prix>7 €</prix>
+	</lecteur>
+	
+	<lecteur id="5">
+		<type>&type;</type>
+		<produit>Lecteur audio MP3 D-Jix M349BT 1.8" Bluetooth Noir</produit>
+		<marque>D-Jix</marque>
+		<prix>29 €</prix>
+	</lecteur>
+</lecteurs>

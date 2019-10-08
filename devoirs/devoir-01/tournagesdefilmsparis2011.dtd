@@ -1,0 +1,12 @@
+<!ELEMENT tournages (tournage+)>
+<!ELEMENT tournage (Titre, Réalisateur, Adresse, OrganismeDemandeur, TypeDeTournage, Arrondissement, DateDebut, DateFin, xy)>
+<!ATTLIST tournage n CDATA #REQUIRED>
+<!ELEMENT Titre (#PCDATA)>
+<!ELEMENT Réalisateur (#PCDATA)>
+<!ELEMENT Adresse (#PCDATA)>
+<!ELEMENT OrganismeDemandeur (#PCDATA)>
+<!ELEMENT TypeDeTournage (#PCDATA)>
+<!ELEMENT Arrondissement (#PCDATA)>
+<!ELEMENT DateDebut (#PCDATA)>
+<!ELEMENT DateFin (#PCDATA)>
+<!ELEMENT xy (#PCDATA)>
