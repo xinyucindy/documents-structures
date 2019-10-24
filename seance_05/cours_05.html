@@ -99,13 +99,13 @@ Bien que XML Schema est défini par le W3C et donc plus largement répandu, Rela
 ```
 
 ``` rng
-# Forme compacte sans patrons nommées (named patterns)
+# Forme compacte sans patrons nommés (named patterns)
 element book {
     element page { text }+
 }
 ```
 ``` rng
-# Forme compacte avec patrons nommées
+# Forme compacte avec patrons nommés
 start = element book { page+ }
 page = element page { text }
 ```
@@ -437,6 +437,95 @@ Modéliser le schéma RelaxNG du document suivant `exercice-livres.xml`
 ```
 
 Correction disponible dans le fichier `exercice-livres.rng`
+
+---
+# RelaxNG - Patrons nommés
+
+Définir des blocs d'éléments ou attributs dans un patron pour l'appeler ensuite
+
+Soulage l'écriture et améliore la lisibilité
+
+Le document commence par une racine `<grammar>` qui contient deux fils
+- `<start>` : élément unique
+- `<define name="">` : zéro ou plusieurs éléments
+
+```xml
+<grammar>
+    <start>
+        <element name="book">
+            <zeroOrMore>
+                <ref name="pageRef"/>
+            </zeroOrMore>
+        </element>
+    </start>
+    <define name="pageRef">
+        <element name="page">
+            <text/>
+        </element>
+    </define>
+</grammar>
+```
+
+---
+# RelaxNG - patrons nommés, suite
+
+On peut aussi écrire
+```xml
+<grammar>
+    <start>
+        <ref name="bookRef"/>
+    </start>
+
+    <define name="bookRef">
+        <element name="book">
+            <zeroOrMore>
+                <ref name="pageRef"/>
+            </zeroOrMore>
+        </element>
+    </define>
+
+    <define name="pageRef">
+        <element name="page">
+            <text/>
+        </element>
+    </define>
+</grammar>
+```
+
+Les patrons peuvent être récursif à l'intérieur d'un élément
+
+---
+# RelaxNG - les énumérations
+
+Contraindre des valeurs pour les éléments et/ou attributs en les énumérant
+
+Usage : dans une balise `<choice>` définir des `<value`>
+
+Les espaces sont normalisés par défaut donc `"  hello  " == "hello"`
+
+Si on veut outrepasser ce comportement, préciser `<value type="string|token">`
+
+```xml
+<elment name="genre">
+    <choice>
+        <value>sf</value>
+        <value>gothique</value>
+    </choice
+</element>
+
+<attribute name="bacalaureat">
+    <choice>
+        <value>L</value>
+        <value>ES</value>
+        <value>S</value>
+    </choice
+</attribute>
+```
+
+---
+# RelaxNG - les listes
+
+Définir des listes pour les valeurs d'attributs
 
 ---
 # RelaxNG - devoir maison
