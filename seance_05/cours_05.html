@@ -439,6 +439,16 @@ Modéliser le schéma RelaxNG du document suivant `exercice-livres.xml`
 Correction disponible dans le fichier `exercice-livres.rng`
 
 ---
+# RelaxNG - devoir maison
+
+Reprendre le XML des tournages
+1. écrire le schéma RelaxNG au format XML
+2. puis sous la forme compacte
+3. déposer sur votre `github` dans le dossier `devoirs`
+
+Vérifier en utilisant la validité de votre schéma avec `Oxygen XML Editor` ou bien `jing`
+
+---
 # RelaxNG - Patrons nommés
 
 Définir des blocs d'éléments ou attributs dans un patron pour l'appeler ensuite
@@ -525,17 +535,31 @@ Si on veut outrepasser ce comportement, préciser `<value type="string|token">`
 ---
 # RelaxNG - les listes
 
-Définir des listes pour les valeurs d'attributs
+Les listes définissent des suites de valeurs séparées par un espace blanc dans un élément/attribut
 
----
-# RelaxNG - devoir maison
+Chaque valeur est listée à l'aide de l'élément `<list>` dans lequel on précisera le type de donnée attendu
 
-Reprendre le XML des tournages
-1. écrire le schéma RelaxNG au format XML
-2. puis sous la forme compacte
-3. déposer sur votre `github` dans le dossier `devoirs`
+On peut employer les séquences, ou bien `<zeroOrMore>` et `<oneOrMore>`
 
-Vérifier en utilisant la validité de votre schéma avec `Oxygen XML Editor` ou bien `jing`
+``` xml
+<vector>11.50 6.50</vector>
+
+<element name="vector">
+    <list>
+        <data type="float"/>
+        <data type="float"/>
+    </list>
+</element>
+<!-- ou bien (pas totalement équivalent) -->
+<element name="vector">
+    <list>
+        <oneOrMore>
+            <data type="float"/>
+        <oneOrMore>
+    </list>
+</element>
+```
+
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
