@@ -1,0 +1,29 @@
+<element name="bibliotheque" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <oneOrMore>
+        <element name="etagere">
+            <attribute name="type"><data type="string"/></attribute>
+            <optional>
+                <attribute name="poussiere"><data type="boolean"/></attribute>
+            </optional>
+            <zeroOrMore>
+                <element name='livre'>
+                    <attribute name="isbn"><data type="int"/></attribute>
+                    <attribute name="prix"><data type="double"/></attribute>
+                    <element name='titre'><text/></element>
+                    <element name='auteur'>
+                        <choice>
+                            <group>
+                                <attribute name="nom"><text/></attribute>
+                                <attribute name="prenom"><text/></attribute>
+                            </group>
+                            <interleave>
+                                <element name="prenom"><text/></element>
+                                <element name="nom"><text/></element>
+                            </interleave>
+                        </choice>
+                    </element>
+                </element>
+            </zeroOrMore>
+        </element>
+    </oneOrMore>
+</element>
