@@ -1,0 +1,15 @@
+element tournages {
+  element tournage {
+    attribute n { xsd:int },
+    element Titre { text },
+    element Réalisateur { text },
+    element Adresse { text },
+    element OrganismeDemandeur { text },
+    element TypeDeTournage { text },
+    element Arrondissement { xsd:int },
+    element DateDebut { xsd:date },
+    element DateFin { xsd:date },
+    (element xy { text }
+     | element xy { empty })
+  }+
+}

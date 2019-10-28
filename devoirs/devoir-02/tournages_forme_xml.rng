@@ -1,0 +1,19 @@
+<element name="tournages" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <oneOrMore>
+        <element name="tournage">
+            <attribute name="n"><data type="int"/></attribute>
+            <element name="Titre"><text/></element>
+            <element name="Réalisateur"><text/></element>
+            <element name="Adresse"><text/></element>
+            <element name="OrganismeDemandeur"><text/></element>
+            <element name="TypeDeTournage"><text/></element>
+            <element name="Arrondissement"><data type="int"/></element>
+            <element name="DateDebut"><data type="date"/></element>
+            <element name="DateFin"><data type="date"/></element>
+            <choice>
+                <element name="xy"><text/></element>
+                <element name="xy"><empty/></element>
+            </choice>       
+        </element>
+    </oneOrMore>
+</element>
