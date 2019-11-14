@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="Bibliotheque"/>
+    </start>
+    <define name="Bibliotheque">
+        <element name="bibliotheque">
+            <oneOrMore>
+                <ref name="Etagere" />
+            </oneOrMore>
+        </element>
+     </define>
+     <define name="Etagere">
+         <element name="etagere">
+             <attribute name="type"><data type="string"/></attribute>
+             <optional>
+                 <attribute name="poussiere"><data type="boolean"/></attribute>
+             </optional>
+             <zeroOrMore>
+                 <ref name='Livre'/>
+             </zeroOrMore>
+         </element>
+     </define>
+    <define name="poussiere.attr">
+        <attribute name="poussiere">
+            <data type="boolean"/>
+        </attribute>
+    </define>
+    <define name="Livre">
+        <element name='livre'>
+            <attribute name="isbn"><data type="int"/></attribute>
+            <attribute name="prix"><data type="double"/></attribute>
+            <element name='titre'><text/></element>
+            <element name='auteur'>
+                <choice>
+                    <group>
+                        <attribute name="nom"><text/></attribute>
+                        <attribute name="prenom"><text/></attribute>
+                    </group>
+                    <group>
+                        <interleave>
+                            <element name="prenom"><text/></element>
+                            <element name="nom"><text/></element>
+                        </interleave>
+                    </group>
+                </choice>
+            </element>
+        </element>
+    </define>
+</grammar>
