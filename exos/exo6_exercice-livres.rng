@@ -16,10 +16,12 @@
                                 <attribute name="nom"><text/></attribute>
                                 <attribute name="prenom"><text/></attribute>
                             </group>
-                            <interleave>
-                                <element name="prenom"><text/></element>
-                                <element name="nom"><text/></element>
-                            </interleave>
+                            <group>
+                                <interleave>
+                                    <element name="prenom"><text/></element>
+                                    <element name="nom"><text/></element>
+                                </interleave>
+                            </group>
                         </choice>
                     </element>
                 </element>
